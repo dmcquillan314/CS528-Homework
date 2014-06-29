@@ -1,0 +1,208 @@
+\input{cs528_style.tex}
+\usepackage{algorithm}
+\usepackage{listings}
+%\usepackage{algpseudocode}
+\usepackage{graphicx,amssymb,amsmath}
+\usepackage{epstopdf}
+
+\usepackage{pgf}
+\usepackage{tikz}
+\usetikzlibrary{arrows,automata}
+\usepackage[latin1]{inputenc}
+\usepackage{color}
+\usepackage{listings}
+\lstset{ %
+language=pascal,                % choose the language of the code
+basicstyle=\footnotesize,       % the size of the fonts that are used for the code
+numbers=left,                   % where to put the line-numbers
+numberstyle=\footnotesize,      % the size of the fonts that are used for the line-numbers
+stepnumber=1,                   % the step between two line-numbers. If it is 1 each line will be numbered
+numbersep=5pt,                  % how far the line-numbers are from the code
+backgroundcolor=\color{white},  % choose the background color. You must add \usepackage{color}
+showspaces=false,               % show spaces adding particular underscores
+showstringspaces=false,         % underline spaces within strings
+showtabs=false,                 % show tabs within strings adding particular underscores
+frame=single,           % adds a frame around the code
+tabsize=2,          % sets default tabsize to 2 spaces
+captionpos=b,           % sets the caption-position to bottom
+breaklines=true,        % sets automatic line breaking
+breakatwhitespace=false,    % sets if automatic breaks should only happen at whitespace
+escapeinside={\%*}{*)}          % if you want to add a comment within your code
+}
+
+\sloppy
+
+
+\oddsidemargin 0in
+\evensidemargin 0in
+\textwidth 6.5in
+\topmargin -0.5in
+\textheight 9.0in
+
+\begin{document}
+
+\solution{Dan McQuillan}{\today}{7}{Summer 2014}{CS 528}{Object Oriented Programming and Design}
+
+\pagestyle{myheadings}  % Leave this command alone
+
+\begin{enumerate}
+	\item[\bf{Part 0}]
+	
+		Click the links above and read the original blog post, and the response from Kent Beck. Then, answer the following briefly (2-3 sentences).
+		
+		\begin{enumerate}
+			\item What are the major complaints that David brings against TDD?
+			
+			%answer
+			
+			\item What does he propose as being the solution?
+			
+			%answer
+			
+			\item Pick two of the things Kent Beck would miss without using TDD. Can you accomplish those things without the use of TDD?
+			
+		\end{enumerate}	
+		
+	\item[\bf{Part 1}]
+	
+		\begin{enumerate}
+			
+			\item What is a Mock Object? Give an example of the use for a mock.
+				
+				% answer
+
+			\item At one point, Kent says the following:
+				
+				Even if I don?t know how to implement something I can almost always figure out how to write a test for it. And if I can?t figure out how to write a test, I have no business writing it in the first place.
+
+				Do you agree with this sentiment? Why or why not?
+				
+				% answer
+
+			\item What is the ?red/green/refactor? loop?
+				
+				% answer
+
+			\item Which way of arriving at a test suite is better, in your opinion: ?going through the tests? (test-first) or ?going to the tests? (test-after)? Does it matter at all? Does this depend on the situation? (If so, in what way/ways?)
+				
+				% answer
+
+			\item In what cases is TDD not (easily) applicable? Give at least one example. What can you do in these cases?
+				
+				% answer
+
+			\item In what ways can an overzealous demand for isolation in unit testing create problems? Is this inherent in unit-testing or TDD?
+				
+				% answer
+
+			\item Why should you have an automated unit test suite? Give at least two reasons.
+							
+				% answer
+
+		\end{enumerate}
+	
+	\item[\bf{Part 2}]
+	
+		\begin{enumerate}
+			\item What is an MVC application? Where did this design pattern originate?
+
+				% answer
+
+			\item Can an application have a worse design because of an attempt to make it more testable? Or is it the case that something that is more testable is always a better design?
+
+				% answer
+
+			\item How does TDD influence the design of code? Give a positive and a negative example.
+
+				% answer
+
+			\item David correlates the size of a codebase with how easy it is to change it. Does this correlation ring true, in your experience?
+
+				% answer
+
+			\item Compare the situation David brings up of ?test-induced design damage? coming from a desire for isolation in TDD with the concept of ?speculative generality?. Are the similar? the same? why/why not?
+
+				% answer
+
+			\item What is cohesion? What is coupling? In what ways can more of one mean less of the other?
+
+				% answer
+
+			\item Kent says,
+
+			Difficulty testing is a symptom of poor design.
+
+			Do you agree?
+
+				% answer
+
+			\item Kent says he is optimistic in that he believes that there is always some design insight that exists that will result in a design that is 			simultaneously more easily testable as well as better structured.
+
+			Do you share his optimism?
+
+				% answer
+
+		\end{enumerate}
+	
+	\item[\bf{Part 3}]
+		
+		\begin{enumerate}
+			\item Martin identifies three important forms of feedback for software development. What were they, and how well is each one served by having a unit test suite?
+
+				% answer
+
+			\item How has Quality Assurance (QA) for programming changed over time? In particular, what role did TDD and self-testing code play in this change?
+
+				% answer
+
+			\item What does David mean when he refers to ?criticality?? How should the ?criticality? of your software influence your testing?
+
+				% answer
+
+			\item Describe how it's possible for code with 100\% test coverage with all tests passing can still have bugs.
+
+				% answer
+
+		\end{enumerate}
+		
+	\item[\bf{Part 4}]
+		
+		\begin{enumerate}
+			\item Kent mentions a good measure for understanding how important a given test is for a codebase. What is it? How could you determine its value for a given test? Using this measure, how could you numerically define ?overtesting??
+
+				% answer
+
+			\item Describe Martin?s trick used to identify if a given line of code is tested by the current test suite.
+
+				% answer
+
+			\item How is the ratio of functional code to test code influenced by coupling in the system?
+
+				% answer
+
+			\item What are the symptoms of overtested code? undertested code?
+
+				% answer
+
+			\item How does the ?audience? of a codebase change its testing tradeoffs?
+
+				% answer
+
+			\item Describe the difference between placing unit tests as the ?authority? of the system differs from placing the functional code as the ?authority? of the system. Which places a larger focus on refactoring?
+
+				% answer
+
+			\item What is one situation where you would be more happy to lose the tests and keep the code? What is one situation where you would be more happy to lose the code and keep the tests? What is different about these two situations?
+
+				% answer
+
+			\item David thinks the testing battle has been won, and Martin isn?t so convinced. Do you believe that we?ve ?won? the battle to get people to unit test their code? Why or why not?
+
+				% answer
+
+		\end{enumerate}
+
+\end{enumerate}
+
+\end{document}
+
