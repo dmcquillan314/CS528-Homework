@@ -54,13 +54,25 @@ escapeinside={\%*}{*)}          % if you want to add a comment within your code
 			\item What are the major complaints that David brings against TDD?
 			
 			%answer
+			That TDD was hurting the architecture/design of his applications.  TDD will lead to overly complex applications and unnecessary abstraction. He also states that we should be focusing more on the design of an application rather than the structure of our unit tests.
 			
 			\item What does he propose as being the solution?
 			
 			%answer
+			His proposed solution is that we should put less emphasis on unit tests and more emphasis on system tests.  He proposes that we should move away from test first and move more in the direction of testing the responses after the fact.
 			
 			\item Pick two of the things Kent Beck would miss without using TDD. Can you accomplish those things without the use of TDD?
 			
+				\begin{enumerate}
+					\item Logic errors
+					
+					This could be accomplished through rigorous testing of the service, but it would be easier to plan out these utilities via unit testing and the test first pattern.
+					
+					\item Anxiety
+					
+					This can be accomplished also through rigorous e2e tests, which can be very time consuming.
+					
+				\end{enumerate}
 		\end{enumerate}	
 		
 	\item[\bf{Part 1}]
@@ -70,34 +82,41 @@ escapeinside={\%*}{*)}          % if you want to add a comment within your code
 			\item What is a Mock Object? Give an example of the use for a mock.
 				
 				% answer
+				A mock object can be used to simulate an example instantiation of an object/class.  An example usage could be when interacting with a ReST service. For example if you have a user authentication service and you would like to test responses from the service to make sure that the correct flow is taken for a response from the service.
 
 			\item At one point, Kent says the following:
 				
-				Even if I don?t know how to implement something I can almost always figure out how to write a test for it. And if I can?t figure out how to write a test, I have no business writing it in the first place.
+				Even if I don't know how to implement something I can almost always figure out how to write a test for it. And if I can't figure out how to write a test, I have no business writing it in the first place.
 
 				Do you agree with this sentiment? Why or why not?
 				
 				% answer
+				I don't fully agree with this sentiment.  However, I do agree with Kent's opinion of you should have no business writing it yet.  I say yet because I believe it's more of an issue of you not understanding the problem at hand.  Not knowing how to write the unit tests is just an example of a causality of not understanding the problem.
 
-			\item What is the ?red/green/refactor? loop?
+			\item What is the "red/green/refactor" loop?
 				
 				% answer
+				Red is after writing the tests they will failure. Then green is working on it until it works.  Once it's working it may not be in a "perfect" state so you should then refactor to clean up the code to make it more readable/reusable.  It is noted as a loop since this process should be repeated until the desired results have been reached.
 
-			\item Which way of arriving at a test suite is better, in your opinion: ?going through the tests? (test-first) or ?going to the tests? (test-after)? Does it matter at all? Does this depend on the situation? (If so, in what way/ways?)
+			\item Which way of arriving at a test suite is better, in your opinion: "going through the tests" (test-first) or "going to the tests" (test-after)? Does it matter at all? Does this depend on the situation? (If so, in what way/ways?)
 				
 				% answer
+				I think it depends on the situation and the task at hand.  If for example you're writing a service that acts as a utility and you fully know what needs to be implemented and all the use cases.  Then, test first may be the better option.  However, if you're working on a task that is more dependent on a third party, such as an api, where all the use cases are not clear.  Then, a mix of the two might be better.  Test first to create the necessary set up and helpers and test after to do integration and performance testing.
 
 			\item In what cases is TDD not (easily) applicable? Give at least one example. What can you do in these cases?
 				
 				% answer
+				An example where TDD is not easily applicable would be when using live data.  In these cases integration, service, and usability testing can be helpful.  You can also use mock objects in those cases although all the cases may not be caught and tested.
 
 			\item In what ways can an overzealous demand for isolation in unit testing create problems? Is this inherent in unit-testing or TDD?
 				
 				% answer
+				By having a demand for isolation you are making sure that each component works when isolated from the rest of the components.  However you are not testing these components when they are communicating with each other which can cause some edge cases to arise.  This is inherent mainly in unit testing as TDD will allows you to thoroughly analyze the problem before beginning on development.  However, it can also appear in TDD in edge cases that a developer may not expect.
 
 			\item Why should you have an automated unit test suite? Give at least two reasons.
 							
 				% answer
+				As the code base grows on larger projects it helps to have to test suite to make sure changes to the code do not break the core functional aspects of the application.  This can help by integrating the unit tests in the build of the application.  Another reason is because it helps to document the functionality of the component you are unit testing.
 
 		\end{enumerate}
 	
