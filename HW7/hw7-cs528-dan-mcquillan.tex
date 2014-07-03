@@ -126,26 +126,35 @@ escapeinside={\%*}{*)}          % if you want to add a comment within your code
 			\item What is an MVC application? Where did this design pattern originate?
 
 				% answer
-
+				A simple explanation of MVC is that you have a Model, View and Controller.  The controller manipulates the model.  The model updates the view.  When the view changes it uses and interacts with the controller.
+				
+				From wikipedia: \\
+				MVC was one of the seminal insights in the early development of graphical user interfaces, and one of the first approaches to describe and implement software constructs in terms of their responsibilities. 
+				
 			\item Can an application have a worse design because of an attempt to make it more testable? Or is it the case that something that is more testable is always a better design?
 
 				% answer
+				I don't believe that an application can have a worse design if it is made more testable.  I think that if it is made more testable(using a proper testing strategy) and it is broken up into lexical modules then the design will not suffer.  However, if it is made such that it is broken up into overly simplified modules it can make the design of an application harder to understand.
 
 			\item How does TDD influence the design of code? Give a positive and a negative example.
 
 				% answer
+				It can help a programmer to figure out a logical way to structure and separate your application into modules. A positive example could be when writing a larger application it forces you to think out the design of the application beforehand.  However, a negative example is based on the same reason.  Since you have to think out the design of the application, you will be breaking up your application into unit testable components.  For example, if you are writing a simple Customer class you might have to then write an interface, a mock class, some IoC configuration and then tests for each.
 
 			\item David correlates the size of a codebase with how easy it is to change it. Does this correlation ring true, in your experience?
 
 				% answer
+				I think that it depends on the situation.  In some cases easy to understand and change code can be written in a few lines when the problem at hand is simple.  However, for larger applications a smaller size of the codebase can lessen how orthogonal the application is. 
 
-			\item Compare the situation David brings up of ?test-induced design damage? coming from a desire for isolation in TDD with the concept of ?speculative generality?. Are the similar? the same? why/why not?
+			\item Compare the situation David brings up of "test-induced design damage" coming from a desire for isolation in TDD with the concept of "speculative generality". Are they similar? the same? why/why not?
 
 				% answer
+				They are in most cases the same.  Speculative generality can be seen when the only callers of a method are test cases.  Such methods could also be seen as test induced design damage.  Test induced design damage also has the same result since in both cases the problem is over abstracted to allow for testing every aspect of the problem in isolation.
 
 			\item What is cohesion? What is coupling? In what ways can more of one mean less of the other?
 
 				% answer
+				Coupling is how much a module relies on another module. Cohesion is how much parts of a module belong together.  Being low coupling would mean that changing something major in one class should not affect the other. High coupling would make your code difficult to make changes as well as to maintain it, as classes are coupled closely together, making a change could mean an entire system revamp.
 
 			\item Kent says,
 
@@ -154,12 +163,14 @@ escapeinside={\%*}{*)}          % if you want to add a comment within your code
 			Do you agree?
 
 				% answer
+				I agree with his statement since if a module is easy to test that means that it will usually have high cohesion.  This is because the higher the cohesion the larger the isolation of the module.  If a module is harder to test that could be a result of having higher coupling since it may be harder to test due to a need for mock objects to test it.
 
-			\item Kent says he is optimistic in that he believes that there is always some design insight that exists that will result in a design that is 			simultaneously more easily testable as well as better structured.
+			\item Kent says he is optimistic in that he believes that there is always some design insight that exists that will result in a design that is simultaneously more easily testable as well as better structured.
 
 			Do you share his optimism?
 
 				% answer
+				I share his optimism for the hope that a design insight will eventually let a code base's design not suffer when making a code base more testable.
 
 		\end{enumerate}
 	
