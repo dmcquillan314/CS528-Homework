@@ -241,17 +241,28 @@ escapeinside={\%*}{*)}          % if you want to add a comment within your code
 				% answer
 				When handing off to a team of developers it causes the development team to become more paranoid that it is going to have significant issues.  However, when handing the software off to a business team might result in having less test coverage since some developers may feel that they will be more confined to specific use cases.  Because of this, the audience can have a direct correlation to the testing coverage of the codebase.
 
-			\item Describe the difference between placing unit tests as the "authority" of the system differs from placing the functional code as the ?authority? of the system. Which places a larger focus on refactoring?
+			\item Describe the difference between placing unit tests as the "authority" of the system differs from placing the functional code as the "authority" of the system. Which places a larger focus on refactoring?
 
 				% answer
+				When the tests are the authority of the system that means that when someone is looking at the codebase they should find the most clarity in what the system should do by looking at the tests.  When the functional code is the authority, it means that you should look at the production code to interpolate what it should be doing.  The functional code as the authority places a larger focus on refactoring.
 
 			\item What is one situation where you would be more happy to lose the tests and keep the code? What is one situation where you would be more happy to lose the code and keep the tests? What is different about these two situations?
 
 				% answer
+				Lose tests: \\
+				If the tests are no longer sufficient the currently design of the system and are need of refactoring to create a better test of what the system should do.
+					
+				Lose code: \\
+				If a system is being upgraded than the code is likely to be mostly deprecated so it would be better to remove the code.
+				
+				
+				What's different: \\
+				When losing the tests I believe it is more focused on how the system is designed and how it changes over time.  Losing the code is more reliant on the design staying consistent over the life of the codebase.
 
-			\item David thinks the testing battle has been won, and Martin isn?t so convinced. Do you believe that we?ve ?won? the battle to get people to unit test their code? Why or why not?
+			\item David thinks the testing battle has been won, and Martin isn't so convinced. Do you believe that we've "won" the battle to get people to unit test their code? Why or why not?
 
 				% answer
+				Yes, I believe that we've won the battle to get people to unit test their code.  It is seen as good practice to unit test in order to gain confidence that a codebase is healthy.  It also helps to explain to new developers what the code is meant to do if the tests are seen as a greater authority than the production code. However, although unit testing seems to have won the battle it does not directly follow that people will use it given a set of circumstances.  Any number of excuses for a developer not to use unit testing in a project can be used.  For example, one of the common excuses I've heard is that there is not enough time to create unit testable code and also the unit tests for it.
 
 		\end{enumerate}
 
