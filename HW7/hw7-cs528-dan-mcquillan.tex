@@ -180,45 +180,68 @@ escapeinside={\%*}{*)}          % if you want to add a comment within your code
 			\item Martin identifies three important forms of feedback for software development. What were they, and how well is each one served by having a unit test suite?
 
 				% answer
+				\begin{enumerate}
+					\item Is the software doing something useful for the user % combine with 2
+						
+						This works well since it will provide concrete examples of how the software is meant to be used by a given user.  However, an aspect of this feedback is how to render output  and thinking about your user's needs. This is not conducive to tests since it's more so what looks good.  It also has a lot more manual tests such as usability testing to make sure the user base will, when given a page, know what their next logical step should be.
+						
+					\item Making sure you don't break anything
+					
+						This one is test conducive since it will check your code base with a given test suite with each compile which will help to given feedback to the user if anything major has been broken.
+						
+					\item Is my codebase healthy
+						
+						This one can be test conducive but it is more reliant on writing readable code and logical modularity of the codebase.
+						
+				\end{enumerate}
 
 			\item How has Quality Assurance (QA) for programming changed over time? In particular, what role did TDD and self-testing code play in this change?
 
 				% answer
+				It has more so evolved to using TDD and gaining an aspect of overconfidence.  This has created a thought that QA was not necessary and has led to some companies removing their QA process before the release of the software.
 
-			\item What does David mean when he refers to ?criticality?? How should the ?criticality? of your software influence your testing?
+			\item What does David mean when he refers to "criticality"? How should the "criticality" of your software influence your testing?
 
 				% answer
+				The criticality refers to the importance of the software being built and what would be lost if it did not fully function.  The criticality should influence test need for extensive testing.  The higher the criticality the more focus should be placed on testing.
 
 			\item Describe how it's possible for code with 100\% test coverage with all tests passing can still have bugs.
 
 				% answer
+				When a software is pushed into the "wild" and the users start using it.  A user can sometimes do things that no one could ever imagine or even plan for because you had thought that the flow was so ridiculous and no one would ever do that.  It can often be hard to plan for those cases.
 
 		\end{enumerate}
 		
 	\item[\bf{Part 4}]
 		
 		\begin{enumerate}
-			\item Kent mentions a good measure for understanding how important a given test is for a codebase. What is it? How could you determine its value for a given test? Using this measure, how could you numerically define ?overtesting??
+			\item Kent mentions a good measure for understanding how important a given test is for a codebase. What is it? How could you determine its value for a given test? Using this measure, how could you numerically define "overtesting"?
 
 				% answer
+				He mentions the concept of delta coverage.  If you have the exact same behavior in other places and multiple tests supply coverage for that case then the value for the new test is lessened.  Using this measure if the there is no confidence gained from the value of delta coverage then the test should not be added.
 
-			\item Describe Martin?s trick used to identify if a given line of code is tested by the current test suite.
+			\item Describe Martin's trick used to identify if a given line of code is tested by the current test suite.
 
 				% answer
+				Remove the line of code and see if a test break.
+				
 
 			\item How is the ratio of functional code to test code influenced by coupling in the system?
 
 				% answer
+				 The ratio is directly proportionate to the coupling in the system.  If the coupling in the system goes up then so would the ration.  Conversely, if the coupling goes down and the code base gets more cohesive then the ration should also go down.
 
 			\item What are the symptoms of overtested code? undertested code?
 
 				% answer
+				You don't have enough tests if when you are changing the code you don't feel confident that it won't break because of the code which is considered under testing.  Over testing is more focused on whether or not you're spending more time writing tests than you are writing production code.
 
-			\item How does the ?audience? of a codebase change its testing tradeoffs?
+			\item How does the "audience" of a codebase change its testing tradeoffs?
 
 				% answer
+				When handing off to a team of developers it causes the development team to become more paranoid that it is going to have significant issues.  However, when handing the software off to a business team might result in having less test coverage since some developers may feel that they will be more confined to specific use cases.  Because of this, the audience can have a direct correlation to the testing coverage of the codebase.
 
-			\item Describe the difference between placing unit tests as the ?authority? of the system differs from placing the functional code as the ?authority? of the system. Which places a larger focus on refactoring?
+			\item Describe the difference between placing unit tests as the "authority" of the system differs from placing the functional code as the ?authority? of the system. Which places a larger focus on refactoring?
 
 				% answer
 
